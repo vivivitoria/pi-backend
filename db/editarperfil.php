@@ -1,52 +1,33 @@
+<?php 
 
-<?php
-$id = $_GET['user_id'];
-    function ExtendedAddslash(&$params)
-    {
-            foreach ($params as &$var) {
-                is_array($var) ? ExtendedAddslash($var) : $var=addslashes($var);
-                unset($var);
-            }
-    }
-ExtendedAddslash($_POST);   
+session_start();
+include('conexao.php');
 
-            $librarian_fname = $_POST['usuario'];
-            $id = $_POST['user_id'];
+$nome_n = $_POST['nome'];
+$email_n = $_POST['email'];
+$senha_n = $_POST['senha'];
+$senha_nova = $_POST['senha_nova'];
+$confirmacao = $_POST['senha_confirma'];
 
-         if(isset($_POST['add'])) {
-            $dbhost = 'localhost';
-            $dbuser = 'root';
-            $dbpass = '';
-            $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+$nome = "SELECT user_nome FROM usuario'";
+$email = "SELECT user_email FROM usuario'";
+$senha = "SELECT user_senha FROM usuario'";
 
-            if(! $conn ) {
-               die('Não foi possível conectar: ' . mysql_error());
-            } 
-            $sql = "UPDATE table SET librarian_fname = '$librarian_fname' WHERE id = '$id'";
-            mysql_select_db('Events');
-            $result = mysql_query( $sql, $conn );
+if ($senha_n == $senha) {
+   $sql  = "UPDATE `usuario` SET 
+               `nome` = '$nome_n', 
+               `email` = '$email_n', 
+               `senha` = '$senha_nova' 
+           WHERE
+               `email` = $email";
+   $update = $mysqli->query($sql);
+   if($update) {
+       echo "<script> alert ('Usuário atualizado com sucesso!'); location.href='cadastrou.php' </script>";
+   } else {
+       $erro = true;
+       echo $mysqli->error;
+   };
+};
 
-            if(! $result ) {
-               die('Não foi possível digitar os dados: ' . mysql_error());
-            };
 
-            mysql_close($conn);
-            header("Location: procurar.php");
-         }
-
-         else {
-            $librarian_fname = $id = "";
-
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $librarian_fname = test_input($_POST["librarian_fname"]);
-            $id = test_input($_POST["id"]);
-            }
-
-            function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-}
 ?>

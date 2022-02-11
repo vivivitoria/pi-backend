@@ -22,6 +22,8 @@ if($verifica) {
     $f = $verifica->fetch_assoc();
     if($row > 0 && $codigo !== intval($f['id'])) {
         echo "<script> alert ('Já existe um usuário com esse e-mail'); </script>";
+	} else {
+		
 	}
 };
 
