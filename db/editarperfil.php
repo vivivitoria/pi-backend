@@ -15,7 +15,7 @@ ExtendedAddslash($_POST);
 
          if(isset($_POST['add'])) {
             $dbhost = 'localhost';
-            $dbuser = '';
+            $dbuser = 'root';
             $dbpass = '';
             $conn = mysql_connect($dbhost, $dbuser, $dbpass);
 
