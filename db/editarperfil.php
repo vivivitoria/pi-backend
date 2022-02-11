@@ -22,7 +22,7 @@ if ($senha_n == $senha) {
                `email` = $email";
    $update = $mysqli->query($sql);
    if($update) {
-       echo "<script> alert ('Usuário atualizado com sucesso!'); location.href='cadastrou.php' </script>";
+       echo "<script> alert ('Usuário atualizado com sucesso!'); location.href='../perfil.html'</script>";
    } else {
        $erro = true;
        echo $mysqli->error;
