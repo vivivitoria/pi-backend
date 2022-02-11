@@ -1,4 +1,5 @@
 <?php
+
 $user_conexao = 'root';
 $senha_conexao = '';
 $dbname_conexao = 'pi';

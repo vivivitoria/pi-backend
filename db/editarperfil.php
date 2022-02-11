@@ -1,17 +1,13 @@
 
 <?php
 $id = $_GET['user_id'];
-  // This function will run within each post array including multi-dimensional arrays
     function ExtendedAddslash(&$params)
     {
             foreach ($params as &$var) {
-                // check if $var is an array. If yes, it will start another ExtendedAddslash() function to loop to each key inside.
                 is_array($var) ? ExtendedAddslash($var) : $var=addslashes($var);
                 unset($var);
             }
     }
-
-// Initialize ExtendedAddslash() function for every $_POST variable
 ExtendedAddslash($_POST);   
 
             $librarian_fname = $_POST['usuario'];
@@ -39,7 +35,6 @@ ExtendedAddslash($_POST);
          }
 
          else {
-        // define variables and set to empty values
             $librarian_fname = $id = "";
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {

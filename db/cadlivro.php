@@ -1,16 +1,5 @@
 
 <?php
-//creates a unique ID with a random number as a prefix - more secure than a static prefix 
-
-//session_start();
-//include("conexao.php");
-
-//$nome=mysqli_real_escape_string($conexao, $_POST['nome']);
-//$autor=mysqli_real_escape_string($conexao, $_POST['autor']);
-//$genero=mysqli_real_escape_string($conexao, $_POST['genero']);
-
-
-$id = uniqid (rand (),true); echo $c; echo "<br>";
 $nome = $_POST['nome'];
 $genero = $_POST['genero'];
 $ano = $_POST['ano'];
