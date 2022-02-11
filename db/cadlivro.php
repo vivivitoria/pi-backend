@@ -1,37 +1,22 @@
-
 <?php
-$nome = $_POST['nome'];
-$genero = $_POST['genero'];
-$ano = $_POST['ano'];
-$autor = $_POST['autor'];
+session_start();
+include("conexao.php");
+$isbn = $_POST['isbn'];
+$page = file_get_contents("https://www.googleapis.com/books/v1/volumes?q={$isbn}");
 
-$connect = mysql_connect('nome_do_servidor', 
-`livro_id`,
-'livro_nome' ,
-'livro_genero',
-'livro_ano',
-'livro_autor');
-$db = mysql_select_db('pi_db');
-$query_select = "SELECT login FROM livro WHERE login = '$login'";
-$select = mysql_query($query_select,$connect);
-$array = mysql_fetch_array($select);
-$logarray = $array['login'];
+$data = json_decode($page, true);
 
-  if($nome == "" || $nome == null){
-    echo"<script language='javascript' type='text/javascript'>
-    alert('O campo nome deve ser preenchido');window.location.href='
-    cadastro.html';</script>";
+$info = $data['items'][0]['volumeInfo'];
+$nome = $info['title'];
+$autor = $info['authors'];
+$imagedata = file_get_contents($info['imageLinks']['thumbnail']);
+file_put_contents('/images/thumb.jpg', $imagedata);  
+$num_pages = $info['pageCount'];
+$descricao = $info['description'];
+$ano_p = $info['publishedDate'];
+$genero = $info['categories'];
+  
+$sql = "INSERT INTO livro (livro_nome, livro_autor, livro_genero, livro_ano, livro_des, livro_num) 
+VALUES ('$nome', '$autor', '$genero', '$ano_p', '$descricao', '$num_pages')";
 
-    }else{
-
-        if($insert){
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Livro cadastrado com sucesso!');
-          window.location.href='listar.html'</script>";
-        }else{
-          echo"<script language='javascript' type='text/javascript'>
-          alert('Não foi possível cadastrar esse livro');
-          window.location.href='cadastro.html'</script>";
-        }
-      }
 ?>
