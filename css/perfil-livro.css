@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+    color:#323232;
+    border:0;
+}
+
+html {
+    background-color: #fff;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-back{
+    font-size:20px;
+    padding:10px;
+    width:150px;
+}
+.btn-back a{
+    text-decoration: none;
+    padding:20px;
+    
+}
+.btn-back a:hover{
+    color:#D1B692;
+}
+#btn-senha{
+    transition:0.5s;
+    background-color:#69443C;
+    color:#fff;
+    border:none;
+    border-radius:25px;
+    height:40px;
+    cursor:pointer;
+   
+}
+.btn:hover{
+    background:linear-gradient(#8b716b,#8b716b );
+}
+input, label{
+    display:block;
+    width:100%;
+    border: none;
+}
+
+input:focus, label:focus{
+    outline:none;
+}
+a{
+    color:#69443C;
+}
+
+body{
+    padding-top:5vh;
+    height: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+}
+
+
+#main-container{
+    width:45%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#dfcbb1;
+    border-radius:10px;
+    padding:25px;
+    margin-bottom:30px;
+}
+#main-container h1{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:1.6rem;
+
+}
+form{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+
+}
+.full-box{
+    flex:1 1 100%;
+    position:relative;
+}
+
+.spacing{
+    margin-right:2.5%;
+}
+label{
+    font-weight:bold;
+    font-size:.8rem;
+}
+
+div .perfil {
+    padding:10px;
+    font-size:.9rem;
+    margin-bottom:40px; 
+    background-color:#ffffff;
+    border-bottom:2px solid #69443C;
+    height:50%;
+}
+
+input{
+    border-bottom:2px solid #69443C;
+    padding:10px;
+    font-size:.9rem;
+    margin-bottom:40px; 
+}
+
+input:focus{
+    border-color:#D1B692;
+}
+input[type="submit"]{
+    background-color:#69443C;
+    color:#fff;
+    border:none;
+    border-radius:25px;
+    height:40px;
+    cursor:pointer;
+}
+#senha-box{
+    display:none;
+}
+#agreement{
+    margin-right:5px;
+
+}
+#agreement, #agreement-label{
+    display:inline-bock;
+    width:auto;
+}
+
+
+.error-validation{
+  
+    position:absolute;
+    top:57px;
+    font-size:.8rem;
+    color:#D1B692;
+}
+
+.template{
+    display:none;
+}
+
+@media (max-width: 768px){
+
+    #main-container{
+        width:80%;
+    }
+    
+}

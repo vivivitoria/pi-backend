@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Playfair+Display:wght@500&family=Raleway:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, main {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  border: none;
+  height: auto;
+  align-items: center;
+  justify-items: center;
+}
+
+#section0 {
+  background: url(../midia/livro.png) center / cover no-repeat;
+  width: 100%;
+  background-size: cover;
+}
+
+#section1 {
+  background: url(../midia/bg.png) center / cover no-repeat;
+  width: 100%;
+  background-size: cover;
+}
+
+#section2 {
+  background: url(../midia/bg.png) center / cover no-repeat;
+  width: 100%;
+  background-size: cover;
+}
+
+#section3 {
+  background: url(../midia/bg.png) center / cover no-repeat;
+  width: 100%;
+  background-size: cover;
+}
+
+.bg-nav {
+  background-color: #fff;
+  color: #69443C;
+  text-transform: lowercase;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+section::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 80%;
+}
+.brown-text {
+  color: #69443C;
+  text-transform: lowercase;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.texto-central {
+  width: 80%;
+}
+
+.texto-central h6 {
+  font-size: 1rem;
+  color: #370707;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.active {
+  color: #370707;
+}
+.nav-content {
+  padding: 3px 3px 3px 3px;
+}
+.title-text {
+  color: #370707;
+  font-family: 'Playfair Display', serif;
+}
+.waves-effect.waves-brown {
+   background-color: #ffffff;
+ }
+
+
+.bt-text {
+  background-color: #fff;
+  color: #69443C;
+  font-weight: 900;
+  font-family: 'Raleway', sans-serif;
+}
+.bt-text:hover {
+  background-color: #C1A57F;
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+@media (max-width : 700px) {
+
+  .container {
+    margin: 4px;
+  }
+  
+}
+
