@@ -3,7 +3,8 @@ session_start();
 include('conexao.php');
 
 if(empty($_POST['email']) || empty($_POST['senha'])) {
-	header('Location: index.php');
+	echo "<script> alert ('Preencha todos os campos!'); </script>";
+	header ('Location: ../login.html');
 	exit();
 }
 
