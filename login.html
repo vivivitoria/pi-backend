@@ -20,33 +20,32 @@
                 <h2 class="title">Entrar na sua conta:</h2>
                 <div class="input-field">
                   <i class="fas fa-user"></i>
-                  <input name="login" type="text" placeholder="Email" id="login"/>
+                  <input name="email_login" type="text" placeholder="Email" id="email"/>
                 </div>
                 <div class="input-field">
                   <i class="fas fa-lock"></i>
-                  <input name="senha" type="password" placeholder="Senha" id="senha">
+                  <input name="senha_login" type="password" placeholder="Senha" id="senha">
                 </div>
-                <input type="submit" id="entrar" value="Entrar" class="btn solid">  
+                <input type="submit" name="btn_loguser" id="entrar" value="Entrar" class="btn solid">  
               </form>
-
 
 <!--------------------------------------------------------------------------------------------------------------------------------->
               <form action="db/cadastro.php" method="POST" class="sign-up-form">
                 <h2 class="title">Cadastre-se:</h2>
                 <div class="input-field">
                   <i class="fas fa-user"></i>
-                  <input type="text" name="nome" id="nome" placeholder="Nome" /> <!--nome usuario (user_nome no bd)-->
+                  <input type="text" name="nome_cad" id="nome" placeholder="Nome" /> <!--nome usuario (user_nome no bd)-->
                 </div>
                 <div class="input-field">
                   <i class="fas fa-envelope"></i>
-                  <input type="email" name="email" id="login" placeholder="Email" /> <!--email usuario (user_email no bd)-->
+                  <input type="email" name="email_cad" id="login" placeholder="Email" /> <!--email usuario (user_email no bd)-->
                 </div>
                 <div class="input-field">
                   <i class="fas fa-lock"></i>
-                  <input type="password" name="senha" id="senha" placeholder="Senha" /> <!--senha usuario (user_senha no bd)-->
+                  <input type="password" name="senha_cad" id="senha" placeholder="Senha" /> <!--senha usuario (user_senha no bd)-->
                 </div>
                 <a href="./menu/menu.html">
-                <button type="submit" id="cadastrar" value="Cadastrar" class="btn solid">Cadastrar</button>
+                <button type="submit" name="submit_caduser" id="cadastrar" value="Cadastrar" class="btn solid">Cadastrar</button>
                 </a>
               </form>
             </div>

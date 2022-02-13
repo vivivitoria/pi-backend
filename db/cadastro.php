@@ -1,37 +1,24 @@
 <?php
+session_start();
+include("conexao.php");
 
-$user_conexao = 'root';
-$senha_conexao = '';
-$dbname_conexao = 'pi';
+$nome = $_POST['nome_cad'];
+$email = $_POST['emai_cadl'];
+$senha = md5($_POST['senha_cad']);
 
-$conexao=mysqli_connect($user_conexao, $senha_conexao, $dbname_conexao) or die(mysqli_errno());
+$resultado = "SELECT COUNT(*) FROM usuario WHERE user_email = $email;";
+$row = $resultado->fetch_row();
 
-//session_start();
-//include("conexao.php");
-
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-
-$teste = "select count(*)as total from usuario where user_email='$email'";
-$resultado = mysqli_query($conexao, $teste);
-$row = mysqli_fetch_assoc($resultado);
-
-if($row['total'] == 1) {
-    $_SESSION['email_existe'] == true;
-    header('Location: cadastro.php');
-    exit;
-}
-
-$sql = "INSERT INTO usuario (user_nome, user_email, user_senha) VALUES ('$nome', '$email', '$senha')";
-
-if($conexao->query($sql) === true) {
-    $_SESSION['status_cadastro'] = true;
-}
-
-$conexao->close();
-
-header('Location: cadastro.php');
-exit;
+if(isset($_POST['submit_caduser'])){
+    if ($row[0] <= 0) {
+        header ('Location: ../menu/menu.html');
+        $sql = "INSERT INTO usuario (user_nome, user_email, user_senha) VALUES ('$nome', '$email', '$senha');"; 
+        exit();
+    }else{
+        header ('Location: ../login.html');
+        echo "<script> alert ('Esse email já está cadastrado!') </script>";
+        exit();
+    }
+};
 
 ?>

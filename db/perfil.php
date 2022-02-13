@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+include('conexao.php');
 $id = $_GET['user_id'];
 $nome = $_GET['nome'];
 $login = $_GET['login'];
