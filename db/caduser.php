@@ -1,18 +1,20 @@
 <?php
 session_start();
 
-if(isset($_GET['submit_caduser'])){
+if(isset($_POST['submit_caduser'])){
     include_once("conexao.php");
 
-    $nome = $_GET['nome_cad'];
-    $email = $_GET['email_cad'];
-    $senha = md5($_GET['senha_cad']);
-    $resultado = mysqli_query($conexao, "INSERT INTO usuario (user_nome, user_email, user_senha) VALUES ('$nome', '$email', '$senha');");
-    echo ('foi');
-    header ('Location: ../menu/menu.html');
+    $nome = $_POST['nome_cad'];
+    $email = $_POST['email_cad'];
+    $senha = md5($_POST['senha_cad']);
+
+    $sql = "INSERT INTO usuario (user_nome, user_email, user_senha) VALUES ($nome, $email, $senha);";
+    
+    header ('Location: ../menu/menu.php');
     exit();
 }else{
     echo ('falhaste');
 }
+
 
 ?>

@@ -1,3 +1,7 @@
+<?php
+include('pegardados.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,18 +14,18 @@
     </head>
     <body>
         <div class="btn-back">
-            <a href="perfil.html"> &#8592; Voltar</a>
+            <a href="perfil.php"> &#8592; Voltar</a>
         </div>
         <div class="center" id="main-container">
             <h1>Editar perfil</h1>
-            <form action="db/editarperfil.php" method="post" id="edit-form">
+            <form action="editarperfil.php" method="post" id="edit-form">
                 <div class="full-box">
-                    <label for="email">E-mail:</label>
-                    <input type="email" value="" name="email_s" id="email_s" placeholder="Digite seu e-mail" data-min-length="3">
+                    <label for="email">E-mail: </label>
+                    <input type="email" value="" name="email_n" placeholder="Digite seu e-mail" data-min-length="3">
                 </div>
                 <div class="full-box">
-                    <label for="name">Nome:</label>
-                    <input type="text"  value="" name="nome_s" id="nome_s" placeholder="Digite o seu nome">
+                    <label for="name">Nome: </label>
+                    <input type="text"  value="" name="nome_n" placeholder="Digite o seu nome">
                 </div>
 
                 <div class="full-box">
@@ -35,7 +39,7 @@
                         <label for="senha_nova">Senha:</label>
                         <input type="password"  value="" name="senha_nova" id="senha_nova" placeholder="Digite a sua nova senha">
                     </div>
-        
+                    
                     <div class="full-box">
                         <label for="senha_confirma">Confirme a senha: </label>
                         <input type="password"  value="" name="senha_confirma" id="senha_confirma" placeholder="Confirme a sua nova senha">
@@ -44,7 +48,7 @@
 
                 <div class="full-box">
                     <label for="senha">Para a confirmação das mudanças digite sua senha atual: </label>
-                    <input type="password"  value="" name="senha_n" id="senha_s" placeholder="Digite sua senha atual">
+                    <input type="password"  value="" name="senha_n" placeholder="Digite sua senha atual">
                 </div>
 
                 <div class="full-box">

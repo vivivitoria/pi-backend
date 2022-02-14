@@ -1,3 +1,7 @@
+<?php
+include('db/pegardados.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +14,7 @@
     </head>
     <body>
         <div class="btn-back">
-            <a href="./menu/menu.html"> &#8592; Voltar</a>
+            <a href="./menu/menu.php"> &#8592; Voltar</a>
         </div>
         <div class="center" id="main-container">
             <h1>Meu perfil</h1>

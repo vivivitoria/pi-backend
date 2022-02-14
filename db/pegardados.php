@@ -2,8 +2,8 @@
 session_start();
 include('./db/conexao.php');
 $db = $conexao;
-$tabela = "livro";
-$colunas = ['user_id','livro_nome','livro_autor', 'livro_des', 'livro_genero', 'livro_ano', 'livro_num'];
+$tabela = "usuario";
+$colunas = ['user_id','user_nome','user_email'];
 $fetchData = fetch_data($db, $tabela, $colunas);
 
 function fetch_data($db, $tabela, $colunas){

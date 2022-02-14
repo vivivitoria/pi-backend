@@ -1,3 +1,8 @@
+<?php
+sesssion_start();
+include('db/livro.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,33 +15,33 @@
     </head>
     <body>
         <div class="btn-back">
-            <a href="./menu/menu.html"> &#8592; Voltar</a>
+            <a href="./menu/menu.php"> &#8592; Voltar</a>
         </div>
         <div class="center" id="main-container">
             <h1>Livro</h1>
             <form method="get" id="edit-form" action="db/cadastrodb.php">
                 <div class="full-box">
-                    <label class="perfil" for="nome">Nome: <?php print $email ?></label>                    
+                    <label class="perfil" for="nome">Nome: <?php print $colunas[1] ?></label>                    
                 </div>
                 <div class="full-box">
-                    <label class="perfil" for="autor">Autor: <?php print $nome ?></label>
+                    <label class="perfil" for="autor">Autor: <?php print $colunas[2] ?></label>
                 </div>
                 <div class="full-box">
-                    <label class="perfil" for="des">Descrição: <?php print $nome ?></label>
+                    <label class="perfil" for="des">Descrição: <?php print $colunas[3] ?></label>
                 </div>
                 <div class="full-box">
-                    <label class="perfil" for="genero">Gênero: <?php print $nome ?></label>
+                    <label class="perfil" for="genero">Gênero: <?php print $colunas[4] ?></label>
                 </div>
                 <div class="full-box">
-                    <label class="perfil" for="ano">Ano: <?php print $nome ?></label>
+                    <label class="perfil" for="ano">Ano: <?php print $colunas[5] ?></label>
                 </div>
                 <div class="full-box">
-                    <label class="perfil" for="num">Número de páginas: <?php print $nome ?></label>
+                    <label class="perfil" for="num">Número de páginas: <?php print $colunas[6] ?></label>
                 </div>
 
                 <div class="full-box">
                     <a href="check.html">
-                    <input type="button" value="Quero pegar esse livro" id="btn-senha" class="btn" onclick="alterarSenha()">
+                    <input type="button" value="Quero pegar esse livro" name="" id="btn-senha" class="btn" onclick="alterarSenha()">
                     </a>
                 </div>
             </form>
