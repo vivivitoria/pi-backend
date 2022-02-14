@@ -2,7 +2,7 @@
 session_start();
 require('conexao.php');
 
-if(ISSET($_POST['email_login'])){
+if(ISSET($_POST['submit_caduser'])){
 	$username = $_POST['email_login'];
 	$password = $_POST['senha_login'];
 
