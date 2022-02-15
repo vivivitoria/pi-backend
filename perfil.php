@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include('db/pegardados.php');
 ?>
 
@@ -20,10 +25,10 @@ include('db/pegardados.php');
             <h1>Meu perfil</h1>
             <form method="post" id="edit-form" action="db/perfil.php">
                 <div class="full-box">
-                    <label class="perfil" for="email">E-mail: <?php print $email ?></label>                    
+                    <label class="perfil" for="email">E-mail:  </label>                    
                 </div>
                 <div class="full-box">
-                    <label class="perfil" for="name">Nome: <?php print $nome ?></label>
+                    <label class="perfil" for="name">Nome:  </label>
                 </div>
 
                 <div class="full-box">

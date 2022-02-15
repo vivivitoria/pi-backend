@@ -28,7 +28,7 @@ include('../db/livro.php');
                     <li class="tab"><a href="#section0" class=" brown-text active">home</a></li>
                     <li class="tab"><a href="#section1" class=" brown-text">novidades</a></li>
                     <li class="tab"><a href="../cadlivro.html" class="brown-text">publicar um livro</a></li>
-                    <li class="tab"><a href="../perfil.html" class="brown-text">meu perfil</a></li>
+                    <li class="tab"><a href="../perfil.php" class="brown-text">meu perfil</a></li>
                 </ul>
             </div>
         </nav>
